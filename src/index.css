@@ -217,6 +217,34 @@ NAVIGATION
 
 /* 
 
+HOME PAGE
+
+*/
+
+.homescreen__logo{
+    position: relative;
+}
+
+.input__wrapper {
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    top: 250px;
+    left: 37.5%;
+    max-width: 25%;
+}
+
+.search__input {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    outline:none;
+    border:rgba(0, 0, 0, 0.521) 1px solid
+}
+
+/* 
+
 FOOTER
 
 */
