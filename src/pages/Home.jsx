@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import UndrawImage from '../assets/undraw_movie.svg'
+import { useNavigate} from 'react-router-dom'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Home = () => {
-    const [userSearch, setUserSearch] = useState()
-
-    function search() {
-        console.log(userSearch)
-    }
+const Home = ({setUserSearch}) => {
+    let navigate = useNavigate();
     return (
         <section id='home'>
             <header>
@@ -22,8 +20,9 @@ const Home = () => {
                             id="" 
                             placeholder='Search for your favorite film here...' 
                             className='search__input' 
-                            onChange={(event) =>setUserSearch(event.target.value)}/>
-                        <button className='search__button' onClick={() => search()}>Search</button>
+                            onChange={(event) =>setUserSearch(event.target.value)}
+                            onKeyPress={(event => {event.key === 'Enter' && navigate('/search')})}/>
+                        <button className='search__button' onClick={() => navigate('/search')}>Search</button>
                     </div>
                     <figure>
                             <img src={UndrawImage} alt="" className='homescreen__logo'/>

@@ -308,6 +308,9 @@ BOOKS
 }
 
 .movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 25%;
   padding: 24px;
   transition: all 300ms ease;
@@ -351,8 +354,10 @@ select {
 .movie__img--wrapper {
   margin-bottom: 8px;
   border-radius: 4px;
-  overflow: hidden;
-  display: flex;
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
 .movie__img {
@@ -390,17 +395,15 @@ select {
 }
 
 .movie__title {
+  margin-top: 10px;
+  padding: 0px 20px;
   font-size: 20px;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .movie__title--link {
   color: #242424;
-}
-
-.movie__ratings {
-  margin-bottom: 8px;
-  color: #fabf2a;
 }
 
 .movie__price--normal {
@@ -409,6 +412,100 @@ select {
   color: #bfbfbf;
 }
 
+.fa-spinner {
+  animation: rotate 600ms infinite linear;
+}
+
+.movie__rating{ 
+  width: 25%;
+  position: absolute;
+  top: -15px;
+  right: -25px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* 
+
+GENRES
+
+*/
+.carousel__container{
+  display: flex;
+}
+
+
+.carousel__item{
+  background: green;
+  flex: 0 0 19.7%;
+  text-align: center;
+  margin: 0 2px;
+  transition: transform 300ms ease 100ms;
+}
+
+.carousel__container:hover .carousel__item {
+  transform: translateX(-25%);
+}
+
+.carousel__item:hover ~ .carousel__item {
+  transform: translateX(25%);
+}
+
+.carousel__item:hover {
+  transform: scale(1.5) !important;
+}
+
+.content {
+  margin-top: 40px;
+  height: 300px;
+  position: relative;
+}
+
+.background {
+  display: flex;
+  height: 100%;
+}
+
+.left {
+  background: black;
+  width: 30%;
+  position: relative;
+}
+
+.left:before {
+  content: '';
+  position: absolute;
+  background-image: linear-gradient(to right,#000,transparent);
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: 275px;
+}
+
+.right {
+  background: green;
+  width: 70%;
+}
+
+.content-container {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px
+}
 /* 
 
 FOOTER
@@ -464,6 +561,20 @@ footer {
   .search__button{
     font-size: 14px;
   }
+
+  .movie {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie__img--wrapper
+
+  .movie__rating {
+    width: 50px;
+    right: -15px;
+  }
   
 }
 
@@ -474,5 +585,14 @@ footer {
 
   .nav__list {
     display: none;
+  }
+
+  .movie {
+    width: 100%;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid #242424;
   }
 }
