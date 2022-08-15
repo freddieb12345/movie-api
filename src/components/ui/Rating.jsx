@@ -3,7 +3,7 @@ import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-pro
 import 'react-circular-progressbar/dist/styles.css';
 
 const Rating = ({rating}) => {
-    const movieRating = +rating * 10;
+    const movieRating = (+rating * 10).toFixed(2);
     return (
         <div>
             <CircularProgressbarWithChildren 
