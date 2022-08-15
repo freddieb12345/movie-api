@@ -16,7 +16,9 @@ const Slider = ({ genreId, genreName }) => {
       `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genreId}`
     );
     setMovies(results);
-    setGotMovies(true);
+    setTimeout(() => {
+      setGotMovies(true);
+    }, 500)
   }
 
   useEffect(() => {

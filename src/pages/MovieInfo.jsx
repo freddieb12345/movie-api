@@ -20,7 +20,9 @@ const MovieInfo = () => {
         );
         // console.log(data)
         setMovie(data);
-        setGotMovie(true);
+        setTimeout(() => {
+            setGotMovie(true);
+        }, 500)
     }
 
     if(gotMovie && !gotMovieGenres) {

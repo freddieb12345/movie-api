@@ -339,7 +339,11 @@ MOVIES
 }
 
 .movies__container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   padding: 24px 0;
+  min-height: 80vh;
 }
 
 .movies__header--title {
