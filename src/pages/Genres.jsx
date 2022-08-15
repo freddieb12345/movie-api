@@ -15,12 +15,6 @@ const Genres = () => {
         getMovieGenres()
     }, [])
 
-    // useEffect(() => {
-    //     console.log(genresData)
-    // }, [genresData])
-
-    // genresData.map((genre) => console.log(genre.id, genre.name))
-
     return (
         <>
             {genresData.map((genre) => <Slider key={genre.id} genreId={genre.id} genreName={genre.name}/>)}

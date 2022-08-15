@@ -16,7 +16,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={ <Home setUserSearch={setUserSearch}/>}></Route>
-          <Route path="/search" element={ <Search userSearch={userSearch}/>}></Route>
+          <Route path="/search" element={ <Search setUserSearch={setUserSearch} userSearch={userSearch}/>}></Route>
           <Route path="/genres" element={ <Genres />} ></Route>
           <Route path="/movie/:id" element={ <MovieInfo />} ></Route>
         </Routes>

@@ -4,7 +4,7 @@ import axios from "axios";
 import noBackdropImg from "../assets/noBackdropAvailable.png";
 
 const Slider = ({ genreId, genreName }) => {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
   const apiKey = "ac8e032ce18cd4b026afad6cd3298ad8";
   const [movies, setMovies] = useState([]);
   const [gotMovies, setGotMovies] = useState(false);
@@ -19,7 +19,6 @@ const Slider = ({ genreId, genreName }) => {
     setGotMovies(true);
   }
 
-  console.log(movies)
   useEffect(() => {
     // console.log(genre.genreId)
     getMovies(genreId);
@@ -136,11 +135,10 @@ const Slider = ({ genreId, genreName }) => {
       setTimeout(timeoutFunc, delay);
     };
   }
-  console.log(movies)
+  
   const posterPath = `https://image.tmdb.org/t/p/original/`;
   return (
     <>
-      {gotMovies ? (
         <div className="slider__row">
           <div className="slider__header">
             <h3 className="slider__title">{genreName}</h3>
@@ -158,21 +156,35 @@ const Slider = ({ genreId, genreName }) => {
             >
               <div className="text">&#8249;</div>
             </button>
+            
             <div className="slider">
-              {movies.map((movie, index) =>
-                movie.backdrop_path ? (
-                    <img
-                    src={posterPath + movie.backdrop_path}
-                    alt="img"
-                    key={index}
-                    className="slider__img cursor"
-                    onClick={() => navigate(`/movie/${movie.id}`)}
-                    />
-                ) : (
-                    <img src={noBackdropImg} key={index} alt="img"/>
-                )
-              )}
+              {gotMovies ? (movies.map((movie, index) =>
+                  movie.backdrop_path ? (
+                      <img
+                      src={posterPath + movie.backdrop_path}
+                      alt="img"
+                      key={index}
+                      className="slider__img cursor"
+                      onClick={() => navigate(`/movie/${movie.id}`)}
+                      />
+                  ) : (
+                      <img src={noBackdropImg} key={index} alt="img"/>
+                  )
+                )) : (
+                  new Array(10).fill(0).map((_,index) => (
+                    // <img
+                    //   src="https://via.placeholder.com/210x200"
+                    //   alt="img"
+                    //   key={index}
+                    //   className="slider__img cursor"
+                    // />
+                    <div className="skeleton slider__skeleton--img" key={index}>
+
+                    </div>
+                ))
+                )}
             </div>
+            
             <button
               className="handle right-handle"
               onClick={(e) => setHandle(e)}
@@ -181,9 +193,6 @@ const Slider = ({ genreId, genreName }) => {
             </button>
           </div>
         </div>
-      ) : (
-        <div>goodbye</div>
-      )}
     </>
   );
 };

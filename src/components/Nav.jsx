@@ -29,8 +29,13 @@ const Nav = () => {
                         </Link>
                     </li>
                     <li className='nav__list'>
-                        <Link to="/" className='nav__link'>
+                        <a href="https://freddieb12345.github.io/" className='nav__link' target="_blank">
                             Contact
+                        </a>
+                    </li>
+                    <li className='nav__list'>
+                        <Link to="/" className='nav__link'>
+                            Search
                         </Link>
                     </li>
                     <button className='btn__menu' onClick={openMenu}>
@@ -43,19 +48,19 @@ const Nav = () => {
                     </button>
                     <ul className='menu__links'>
                         <li className='menu__list'>
-                            <Link to="/" className='menu__link'>
+                            <Link to="/" className='menu__link' onClick={closeMenu}>
                                 Home
                             </Link>
                         </li>
                         <li className='menu__list'>
-                            <Link to="/" className='menu__link'>
-                                Books
+                            <Link to="/genres" className='menu__link' onClick={closeMenu}>
+                                Movies
                             </Link>
                         </li>
                         <li className='menu__list'>
-                            <Link to="/" className='menu__link'>
-                                About
-                            </Link>
+                            <a href="https://freddieb12345.github.io/" className='menu__link' target="_blank">
+                                Contact
+                            </a>
                         </li>
                     </ul>
                 </div>

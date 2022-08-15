@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Movie from '../components/ui/Movie';
+import NoResultsImg from '../assets/undraw_questions.svg'
 
 const Search = ({userSearch}) => {
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState([]);
+    const [noResults, setNoResults] = useState();
     const apiKey = "ac8e032ce18cd4b026afad6cd3298ad8";
     const filmSearch ="harry potter";
     
@@ -16,6 +18,7 @@ const Search = ({userSearch}) => {
             setLoading(false)
         }, 1000)
     }
+
     function filterMovies(filter) {
         console.log(filter)
         if(filter === 'OLDEST') {
@@ -41,15 +44,20 @@ const Search = ({userSearch}) => {
     },[loading])
 
     useEffect(() => {
-        getMovies()
+        if(userSearch) {
+            setNoResults(false)
+            getMovies()
+        }else {
+            setNoResults(true)
+        }
         // eslint-disable-next-line
     }, [])
     
     return (
         <div id='movies__body'>
             <main id='movies__main'>
-                <section>
-                    <div className="movies__container">
+                <section className='results__section'>
+                    {!noResults ? (<div className="movies__container">
                         <div className="row">
                             <div className="movies__header">
                                 <h2 className='section__title'>
@@ -80,7 +88,12 @@ const Search = ({userSearch}) => {
                                 )}
                             </div>
                         </div>
-                    </div>
+                    </div>) : (
+                        <figure className='no__results--figure'>
+                            <h1>No Results available</h1>
+                            <img src={NoResultsImg} alt="" className='no__results--img'/>
+                        </figure>
+                    )}
                 </section>
             </main>
         </div>

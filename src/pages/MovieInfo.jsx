@@ -26,7 +26,7 @@ const MovieInfo = () => {
     if(gotMovie && !gotMovieGenres) {
         getMovieGenresById()
     }
-
+    console.log(movie)
     async function getMovieGenresById() {
         const {data: {genres}} = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`)
         console.log(genres)
@@ -98,7 +98,7 @@ const MovieInfo = () => {
                                         <p className="movie__summary--para">
                                             {movie.overview}
                                         </p>
-                                
+                                        <a href={`https://www.imdb.com/title/${movie.imdb_id}/?ref_=fn_al_tt_1`} className='imdb__link' target="_blank">IMDB Link</a>
                                     </div>
                                 </div>
                             </div>
@@ -122,23 +122,12 @@ const MovieInfo = () => {
                                 </Link>
                             </div>
                             <div className="movie__selected">
-                                <figure className="movie__selected--figure">
-                                    <img src="https://image.tmdb.org/t/p/original/62HCnUTziyWcpDaBO2i1DX17ljH.jpg" alt="" className='movie__selected--img'/>
-                                </figure>
-                                <div className="movie__selected--description">
-                                    <h2 className="movie__selected--title">movie title</h2>
-                                    {/* <Rating rating={movie.rating}/> */}
-                                    <div className="movie__summary">
-                                        <h3 className='movie__summary--title'>
-                                            Summary
-                                        </h3>
-                                        <p className="movie__summary--para">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nulla quae amet iste, eum doloremque fuga, minima pariatur similique voluptates ducimus. Harum temporibus ex a ullam voluptatem quae repellat iste?
-                                        </p>
-                                        <p className="movie__summary--para">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nulla quae amet iste, eum doloremque fuga, minima pariatur similique voluptates ducimus. Harum temporibus ex a ullam voluptatem quae repellat iste?
-                                        </p>
-                                    </div>
+                                <div className="movie__selected--figure-skeleton"></div>
+                                <div className="movie__selected--description-skeleton">
+                                    <div className="movie__selected--title-skeleton"></div>
+                                    <div className='movie__summary--title-skeleton'></div>
+                                    <div className="movie__summary--para-skeleton"></div>
+                                    <div className="movie__summary--para-skeleton"></div>
                                 </div>
                             </div>
                         </div>

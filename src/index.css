@@ -289,9 +289,14 @@ MOVIES
   flex-direction: column;
 }
 
-#movies__main {
-  /* --background-img: url("https://image.tmdb.org/t/p/original/p1F51Lvj3sMopG948F5HsBbl43C.jpg"); */
-  /* background-image: url("https://image.tmdb.org/t/p/original/p1F51Lvj3sMopG948F5HsBbl43C.jpg"); */
+/* #movies__main {
+  background-size: cover;
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: color-burn
+} */
+
+.movies__main--background{
   background-size: cover;
   flex: 1;
   background-color: rgba(0, 0, 0, 0.5);
@@ -437,7 +442,22 @@ select {
   }
 }
 
+.no__results--figure{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1200px;
+}
 
+.results__section{
+  display: flex;
+}
+
+.no__results--img{
+  display: flex;
+  margin-bottom: 1rem;
+  width: 100%;
+}
 /* 
 
 MOVIE INFO
@@ -485,6 +505,7 @@ MOVIE INFO
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  color: white;
 }
 
 .movie__selected--title {
@@ -522,6 +543,43 @@ MOVIE INFO
 
 .genre__name{
   padding-right: 1rem;
+}
+
+.movie__selected--figure-skeleton{
+  width: 340px;
+  height: 500px;
+  background-color:#feeeee;
+}
+
+.movie__selected--title-skeleton{
+  width: 300px;
+  height: 40px;
+  background-color:#feeeee;
+  margin-bottom: 8px;
+}
+
+.movie__summary--title-skeleton{
+  width: 100%;
+  height: 30px;
+  background-color:#feeeee;
+  margin-bottom: 8px;
+}
+
+.movie__summary--para-skeleton{
+  width: 100%;
+  height: 90px;
+  background-color:#feeeee;
+  margin-bottom: 8px;
+}
+
+.movie__selected--description-skeleton {
+  width: 60%;
+  padding: 0 32px 16px 32px;
+}
+
+.imdb__link{
+  text-decoration: none;
+  color: white;
 }
 /* 
 
@@ -586,7 +644,17 @@ footer {
     align-items: center;
   }
 
-  .movie__img--wrapper
+  .movie__selected {
+    flex-direction: column;
+  }
+  
+  .movie__selected--figure {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .movie__selected--description {
+    width: 100%;
+  }
 
   .movie__rating {
     width: 50px;
