@@ -54,7 +54,7 @@ const Search = ({userSearch}) => {
     }, [])
     
     return (
-        <div id='movies__body'>
+        <div id='movies__body' className='movies__search--body'>
             <main id='movies__main'>
                 <section className='results__section'>
                     {!noResults ? (<div className="movies__container">
