@@ -10,9 +10,9 @@ const Rating = ({rating}) => {
                 value={movieRating} 
                 background
                 styles={buildStyles({
-                    textSize: "30px",
                     textColor: '#DE5656',
                     pathColor: '#DE5656',
+                    trailColor: '#feeeee',
                     backgroundColor: '#feeeee',
                 })}
             >

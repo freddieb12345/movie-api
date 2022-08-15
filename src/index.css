@@ -279,7 +279,7 @@ HOME PAGE
 
 /* 
 
-BOOKS
+MOVIES
 
 */
 #movies__body {
@@ -290,8 +290,12 @@ BOOKS
 }
 
 #movies__main {
+  /* --background-img: url("https://image.tmdb.org/t/p/original/p1F51Lvj3sMopG948F5HsBbl43C.jpg"); */
+  /* background-image: url("https://image.tmdb.org/t/p/original/p1F51Lvj3sMopG948F5HsBbl43C.jpg"); */
+  background-size: cover;
   flex: 1;
-  background-color: rgb(248,249,250);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: color-burn
 }
 
 .movies__header {
@@ -434,6 +438,91 @@ select {
 }
 
 
+/* 
+
+MOVIE INFO
+
+*/
+.movie__link {
+  color: white;
+}
+
+.movie__selected--top {
+  padding: 0 24px;
+  margin-bottom: 8px;
+  font-size: 32px;
+  color: #242424;
+  display: flex;
+  align-items: center;
+}
+
+.movie__selected--title--top {
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.movie__selected {
+  display: flex;
+}
+
+.movie__selected--figure {
+  width: 40%;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie__selected--img {
+  max-height: 500px;
+  width: auto;
+  max-width: 100%;
+}
+
+.movie__selected--description {
+  width: 60%;
+  padding: 16px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.movie__selected--title {
+  margin-bottom: 8px
+}
+
+.movie__summary {
+  margin-bottom: 16px;
+}
+
+.movie__summary--title {
+  margin-bottom: 8px;
+}
+
+.movie__summary--para {
+  margin-bottom: 16px;
+}
+
+.movie__info--rating{
+  width: 4rem;
+  margin: 0 1rem;
+}
+
+.movie__info--row{
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.movie__selected--genres{
+  display: flex;
+  margin: 1rem 0;
+}
+
+.genre__name{
+  padding-right: 1rem;
+}
 /* 
 
 FOOTER

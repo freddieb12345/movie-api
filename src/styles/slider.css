@@ -7,6 +7,10 @@
     --img-gap: .25rem
 }
 
+.cursor {
+    cursor: pointer;
+}
+
 .slider__container {
     display: flex;
     justify-content: center;
@@ -30,6 +34,20 @@
     padding: var(--img-gap);
     border-radius: 1rem;
     overflow: hidden;
+}
+
+.slider__img {
+    transition: all 250ms ease-in-out;
+}
+
+.slider__img:hover {
+    transform: scale(1.1);
+    margin: 0 1rem;
+    overflow: visible;
+}
+
+.slider__container:hover {
+    overflow: visible;
 }
 
 .handle {
@@ -72,10 +90,6 @@
 .handle:hover .text,
 .handle:focus .text{
     transform: scale(1.1);
-}
-
-.slider__row {
-
 }
 
 .slider__header {

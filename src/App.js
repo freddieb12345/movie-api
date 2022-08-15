@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import Genres from "./pages/Genres";
 import Home from "./pages/Home";
+import MovieInfo from "./pages/MovieInfo";
 import Search from "./pages/Search";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={ <Home setUserSearch={setUserSearch}/>}></Route>
           <Route path="/search" element={ <Search userSearch={userSearch}/>}></Route>
           <Route path="/genres" element={ <Genres />} ></Route>
+          <Route path="/movie/:id" element={ <MovieInfo />} ></Route>
         </Routes>
         <Footer />
       </div>
