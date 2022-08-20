@@ -15,7 +15,9 @@ const Footer = () => {
                     </Link>
                     <div className="footer__list">
                         <Link to="/" className='footer__link'>Home</Link>
-                        <span className='footer__link no-cursor'>About</span>
+                        <a href="https://freddieb12345.github.io/" className='footer__link' target="_blank" rel="noreferrer">
+                            Contact
+                        </a>
                         <Link to="/books" className='footer__link'>Movies</Link>
                     </div>
                     <div className="footer__copyright">Copyright &copy; 2022</div>
