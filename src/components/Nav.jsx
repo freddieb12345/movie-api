@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import MovieLogo from '../assets/MovieAPI-1.png'
+import '../styles/nav.css'
 
 const Nav = () => {
     function openMenu() {
@@ -29,7 +30,7 @@ const Nav = () => {
                         </Link>
                     </li>
                     <li className='nav__list'>
-                        <a href="https://freddieb12345.github.io/" className='nav__link' target="_blank">
+                        <a href="https://freddieb12345.github.io/" className='nav__link' target="_blank" rel="noreferrer">
                             Contact
                         </a>
                     </li>
@@ -58,7 +59,7 @@ const Nav = () => {
                             </Link>
                         </li>
                         <li className='menu__list'>
-                            <a href="https://freddieb12345.github.io/" className='menu__link' target="_blank">
+                            <a href="https://freddieb12345.github.io/" className='menu__link' target="_blank" rel="noreferrer">
                                 Contact
                             </a>
                         </li>

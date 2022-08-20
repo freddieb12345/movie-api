@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './index.css';
+import './styles/index.css';
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBars, faX, faSpinner, faArrowLeft } from '@fortawesome/free-solid-svg-icons'

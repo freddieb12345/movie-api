@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Movie from '../components/ui/Movie';
 import NoResultsImg from '../assets/undraw_questions.svg'
+import '../styles/search.css'
 
 const Search = ({userSearch}) => {
     const [loading, setLoading] = useState(true);

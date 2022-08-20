@@ -1,7 +1,7 @@
 import React from 'react';
 import UndrawImage from '../assets/undraw_movie.svg'
 import { useNavigate} from 'react-router-dom'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '../styles/home.css'
 
 const Home = ({setUserSearch}) => {
     let navigate = useNavigate();

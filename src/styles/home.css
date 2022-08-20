@@ -1,0 +1,84 @@
+#home {
+  position: relative;
+  padding: 5% 0;
+  background-color: #feeeee;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+#home:before {
+  content: "";
+  background: url("/src/assets/wave.png");
+  position: absolute;
+  width: 101vw;
+  height: 12vw;
+  left: 0;
+  bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.header__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.search__input {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: rgba(0, 0, 0, 0.521) 1px solid;
+  font-size: 24px;
+}
+
+.search__button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  background-color: #de5656;
+  border: #de5656 1px solid;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.homescreen__logo {
+  width: 100%;
+  margin: 50px 0;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .header__description {
+    padding: 0 24px;
+  }
+
+  .search__input {
+    font-size: 14px;
+  }
+
+  .search__button {
+    font-size: 14px;
+  }
+}

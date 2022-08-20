@@ -7,12 +7,13 @@ import Home from "./pages/Home";
 import MovieInfo from "./pages/MovieInfo";
 import Search from "./pages/Search";
 
+
 function App() {
   const [userSearch, setUserSearch] = useState()
 
   return (
     <Router>
-      <div className="App">
+      <div className="app">
         <Nav />
         <Routes>
           <Route path="/" element={ <Home setUserSearch={setUserSearch}/>}></Route>

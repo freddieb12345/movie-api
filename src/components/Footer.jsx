@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieLogo from '../assets/MovieAPI-1.png'
 import { Link } from "react-router-dom"
+import '../styles/footer.css'
 
 const Footer = () => {
     return (

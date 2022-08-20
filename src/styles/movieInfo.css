@@ -1,0 +1,144 @@
+.movie__link {
+  color: white;
+}
+
+.movie__selected--top {
+  padding: 0 24px;
+  margin-bottom: 8px;
+  font-size: 32px;
+  color: #242424;
+  display: flex;
+  align-items: center;
+}
+
+.movie__selected--title--top {
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.movie__selected {
+  display: flex;
+}
+
+.movie__selected--figure {
+  width: 40%;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie__selected--img {
+  max-height: 500px;
+  width: auto;
+  max-width: 100%;
+}
+
+.movie__selected--description {
+  width: 60%;
+  padding: 16px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+}
+
+.movie__selected--title {
+  margin-bottom: 8px;
+}
+
+.movie__summary {
+  margin-bottom: 16px;
+}
+
+.movie__summary--title {
+  margin-bottom: 8px;
+}
+
+.movie__summary--para {
+  margin-bottom: 16px;
+}
+
+.movie__info--rating {
+  width: 4rem;
+  margin: 0 1rem;
+}
+
+.movie__info--row {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.movie__selected--genres {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.genre__name {
+  padding-right: 1rem;
+}
+
+.movie__selected--figure-skeleton {
+  width: 340px;
+  height: 500px;
+  background-color: #feeeee;
+}
+
+.movie__selected--title-skeleton {
+  width: 300px;
+  height: 40px;
+  background-color: #feeeee;
+  margin-bottom: 8px;
+}
+
+.movie__summary--title-skeleton {
+  width: 100%;
+  height: 30px;
+  background-color: #feeeee;
+  margin-bottom: 8px;
+}
+
+.movie__summary--para-skeleton {
+  width: 100%;
+  height: 90px;
+  background-color: #feeeee;
+  margin-bottom: 8px;
+}
+
+.movie__selected--description-skeleton {
+  width: 60%;
+  padding: 0 32px 16px 32px;
+}
+
+.imdb__link {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .movie {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie__selected {
+    flex-direction: column;
+  }
+
+  .movie__selected--figure {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .movie__selected--description {
+    width: 100%;
+  }
+
+  .movie__rating {
+    width: 50px;
+    right: -15px;
+  }
+}
