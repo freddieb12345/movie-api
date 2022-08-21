@@ -23,11 +23,11 @@ const Slider = ({ title, fetchUrl }) => {
       setGotMovies(true)
     }
     fetchData()
+    setTimeout(() => {
+      document.querySelectorAll(".progress__bar").forEach(calculateProgressBar);
+    }, 500)
   }, [fetchUrl]);
 
-  setTimeout(() => {
-    document.querySelectorAll(".progress__bar").forEach(calculateProgressBar);
-  }, 500)
   window.addEventListener("resize", throttledProgressBar);
 
   return (
