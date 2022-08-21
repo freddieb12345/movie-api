@@ -16,17 +16,18 @@ const Slider = ({ title, fetchUrl }) => {
   const sliderRef = useRef()
 
   useEffect(() => {
-    document.querySelectorAll(".progress__bar").forEach(calculateProgressBar);
     setGotMovies(false)
     async function fetchData() {
       const { data: {results }} = await axios.get(fetchUrl)
-      console.log(results)
       setMovies(results)
       setGotMovies(true)
     }
     fetchData()
   }, [fetchUrl]);
 
+  setTimeout(() => {
+    document.querySelectorAll(".progress__bar").forEach(calculateProgressBar);
+  }, 500)
   window.addEventListener("resize", throttledProgressBar);
 
   return (
@@ -36,8 +37,6 @@ const Slider = ({ title, fetchUrl }) => {
           <h3 className="slider__title">{title}</h3>
           <div className="progress__bar" ref={progressBarRef}>
             <div className="progress__item active"></div>
-            <div className="progress__item"></div>
-            <div className="progress__item"></div>
             <div className="progress__item"></div>
           </div>
         </div>
