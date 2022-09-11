@@ -16,12 +16,34 @@ const Slider = ({ title, fetchUrl }) => {
   const progressBarRef = useRef()
   const sliderRef = useRef()
 
+  // function fetchWithAutoRetry(fetcher, maxRetryCount) {
+  //   return new Promise((resolve, reject) => {
+  //     let retries = 0;
+  //     const caller = () => 
+  //       fetcher()
+  //         .then((data) => {
+  //           resolve(data);
+  //         })
+  //         .catch((error) => {
+  //           if(retries < maxRetryCount) {
+  //             retries ++
+  //             caller()
+  //           } else {
+  //             reject(error)
+  //           }
+  //         });
+  //         retries =1;
+  //         caller();
+  //   })
+  // }
+
   useEffect(() => {
     setGotMovies(false)
     async function fetchData() {
       const { data: {results }} = await axios.get(fetchUrl)
         .catch((err) => {
-          console.log(err)
+          console.log(err.response)
+          console.error(err)
         })
       setMovies(results)
       setGotMovies(true)
