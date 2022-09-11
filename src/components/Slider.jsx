@@ -16,35 +16,10 @@ const Slider = ({ title, fetchUrl }) => {
   const progressBarRef = useRef()
   const sliderRef = useRef()
 
-  // function fetchWithAutoRetry(fetcher, maxRetryCount) {
-  //   return new Promise((resolve, reject) => {
-  //     let retries = 0;
-  //     const caller = () => 
-  //       fetcher()
-  //         .then((data) => {
-  //           resolve(data);
-  //         })
-  //         .catch((error) => {
-  //           if(retries < maxRetryCount) {
-  //             retries ++
-  //             caller()
-  //           } else {
-  //             reject(error)
-  //           }
-  //         });
-  //         retries =1;
-  //         caller();
-  //   })
-  // }
-
   useEffect(() => {
     setGotMovies(false)
     async function fetchData() {
-      const { data: {results }} = await axios.get(fetchUrl)
-        .catch((err) => {
-          console.log(err.response)
-          console.error(err)
-        })
+      const { data: {results}} = await axios.get(fetchUrl)
       setMovies(results)
       setGotMovies(true)
     }
@@ -82,7 +57,12 @@ const Slider = ({ title, fetchUrl }) => {
                     src={posterPath + movie.backdrop_path}
                     alt="img"
                     className="slider__img"
-                    
+                    onError={({ currentTarget }) => {
+                      setTimeout(() => {
+                        currentTarget.onerror = null;
+                        currentTarget.src= posterPath + movie.backdrop_path;
+                      },1000)
+                    }}
                     />
                     <div className="movie__backdrop cursor" onClick={() => navigate(`/movie/${movie.id}`)}>
                         <div className="movie__backdrop--content">
