@@ -6,6 +6,7 @@ import setHandle from '../js/setHandle'
 import { throttledProgressBar } from "../js/throttleProgressBar";
 import calculateProgressBar from "../js/calculateProgressBar";
 import Rating from '../components/ui/Rating'
+
 const posterPath = `https://image.tmdb.org/t/p/original/`;
 
 const Slider = ({ title, fetchUrl }) => {
@@ -19,6 +20,9 @@ const Slider = ({ title, fetchUrl }) => {
     setGotMovies(false)
     async function fetchData() {
       const { data: {results }} = await axios.get(fetchUrl)
+        .catch((err) => {
+          console.log(err)
+        })
       setMovies(results)
       setGotMovies(true)
     }
