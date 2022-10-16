@@ -30,7 +30,7 @@ const Nav = () => {
                         </Link>
                     </li>
                     <li className='nav__list'>
-                        <a href="https://freddieb12345.github.io/" className='nav__link' target="_blank" rel="noreferrer">
+                        <a href="https://react-portfolio-psi-two.vercel.app/" className='nav__link' target="_blank" rel="noreferrer">
                             Contact
                         </a>
                     </li>
@@ -59,7 +59,7 @@ const Nav = () => {
                             </Link>
                         </li>
                         <li className='menu__list'>
-                            <a href="https://freddieb12345.github.io/" className='menu__link' target="_blank" rel="noreferrer">
+                            <a href="https://react-portfolio-psi-two.vercel.app/" className='menu__link' target="_blank" rel="noreferrer">
                                 Contact
                             </a>
                         </li>

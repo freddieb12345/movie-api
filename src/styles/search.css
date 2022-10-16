@@ -5,6 +5,12 @@
   flex-direction: column;
 }
 
+#movies__main {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 .movies__search--body {
   align-items: center;
 }
@@ -44,13 +50,17 @@
   align-content: center;
   padding: 24px 0;
   min-height: 80vh;
+  min-width: 80vw;
 }
 
-.movies__header--title {
+.section__title {
   margin-bottom: 0;
 }
 
 select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #fff;
   border-radius: 4px;
   border: 1px solid #dcdfe6;
@@ -153,7 +163,10 @@ select {
 }
 
 .results__section {
+  width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .no__results--img {

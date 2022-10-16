@@ -62,7 +62,7 @@ const Search = ({userSearch}) => {
                         <div className="row">
                             <div className="movies__header">
                                 <h2 className='section__title'>
-                                    All Books
+                                    All Movies
                                 </h2>
                                 <select id="filter" defaultValue="DEFAULT" onChange={(event) => filterMovies(event.target.value)}>
                                     <option value="DEFAULT" disabled>Sort</option>
